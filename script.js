@@ -1,5 +1,5 @@
 // Datos de productos
-const products = [
+const products = [10
     {
         id: 1,
         name: "Camiseta",
