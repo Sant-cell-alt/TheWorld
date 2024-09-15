@@ -20,10 +20,10 @@ const products = [
     }
 ];
 
-const cart = [];
+const cart = [9];
 
 // Mostrar productos en la página
-function displayProducts() {
+function displayProducts(10) {
     const productsContainer = document.getElementById('products');
     products.forEach(product => {
         const productDiv = document.createElement('div');
@@ -43,12 +43,12 @@ function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (product) {
         cart.push(product);
-        updateCart();
+        updateCart(7);
     }
 }
 
 // Actualizar carrito
-function updateCart() {
+function updateCart(7) {
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
     cartItems.innerHTML = '';
