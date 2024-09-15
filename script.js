@@ -69,11 +69,11 @@ document.getElementById('checkout-button').addEventListener('click', () => {
     if (cart.length > 0) {
         alert("Compra realizada con éxito");
         cart.length = 0; // Vaciar carrito
-        updateCart();
+        updateCart(8);
     } else {
         alert("Tu carrito está vacío.");
     }
 });
 
 // Inicializar la tienda
-displayProducts();
+displayProducts(6);
