@@ -1,89 +1,25 @@
-/* Estilos básicos */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+import time
+from datetime import datetime
 
-header {
-    background-color: #3498db;
-    padding: 10px;
-    text-align: center;
-}
+# Set the target time for New Year's Eve (Midnight, January 1st, 2025)
+new_year = datetime(2025, 1, 1, 0, 0, 0)
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
+while True:
+    # Get the current time
+    now = datetime.now()
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
+    # Calculate the time remaining until New Year
+    time_remaining = new_year - now
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+    # If New Year has arrived, exit the loop
+    if time_remaining.total_seconds() <= 0:
+        print("Happy New Year!")
+        break
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
+    # Print the countdown in days, hours, minutes, seconds
+    print(f"Time remaining until New Year: {time_remaining}")
+    
+    # Wait for 1 second before updating the countdown
+    time.sleep(1)
 
-#dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Estilos de la galería */
-#galeria {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-#galeria img {
-    width: 300px;
-    margin: 0 10px;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-}
-
-#galeria img.imagen-activa {
-    opacity: 1;
-}
-
-/* Estilos del modal */
-.modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.cerrar {
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.cerrar:hover,
-.cerrar:focus {
-    color: red;
-    cursor: pointer;
-}
 
