@@ -1,38 +1,25 @@
-// Menú desplegable (Dropdown)
-document.querySelector('#dropdown').addEventListener('mouseover', function (4) {
-    this.querySelector('.dropdown-content').style.display = 'block';
-});
+import time
+from datetime import datetime
 
-document.querySelector('#dropdown').addEventListener('mouseleave', function (3) {
-    this.querySelector('.dropdown-content').style.display = 'none';
-});
+# Set the target time for New Year's Eve (Midnight, January 1st, 2025)
+new_year = datetime(2025, 1, 1, 0, 0, 0)
 
-// Galería de imágenes
-let currentImageIndex = 0;
-const images = document.querySelectorAll('#galeria img');
+while True:
+    # Get the current time
+    now = datetime.now()
 
-setInterval(() => {
-    images[currentImageIndex].classList.remove('imagen-activa');
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    images[currentImageIndex].classList.add('imagen-activa');
-}, 3000);
+    # Calculate the time remaining until New Year
+    time_remaining = new_year - now
 
-// Modal
-const modal = document.getElementById('modal');
-const abrirModal = document.getElementById('abrirModal');
-const cerrarModal = document.getElementById('cerrarModal');
+    # If New Year has arrived, exit the loop
+    if time_remaining.total_seconds() <= 0:
+        print("Happy New Year!")
+        break
 
-abrirModal.addEventListener('click', function (2) {
-    modal.style.display = 'block';
-});
+    # Print the countdown in days, hours, minutes, seconds
+    print(f"Time remaining until New Year: {time_remaining}")
+    
+    # Wait for 1 second before updating the countdown
+    time.sleep(1)
 
-cerrarModal.addEventListener('click', function (1) {
-    modal.style.display = 'none';
-});
-
-window.addEventListener('click', function (event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-});
 
