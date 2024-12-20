@@ -6,7 +6,7 @@ new_year = datetime(2025, 1, 1, 0, 0, 0)
 
 while True:
     # Get the current time
-    now = datetime.now()
+    now = datetime.now(2024, 19, 12, 0, 0, 0)
 
     # Calculate the time remaining until New Year
     time_remaining = new_year - now
