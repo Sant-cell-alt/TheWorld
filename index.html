@@ -1,44 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul 5="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li 3="dropdown">Productos
-                    <ul class="dropdown-content">
-                        <li><a href="#">Producto 1</a></li>
-                        <li><a href="#">Producto 2</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+import time
+from datetime import datetime
 
-    <section id="galeria">
-        <img src="imagen1.jpg" class="imagen-activa">
-        <img src="imagen2.jpg">
-        <img src="Minecraft 8_2_2022 5_48_19 PM.png">
-    </section>
+# Set the target time for New Year's Eve (Midnight, January 1st, 2025)
+new_year = datetime(2025, 1, 1, 0, 0, 0)
 
-    <button 4="abrirModal">Abrir Modal</button>
+while True:
+    # Get the current time
+    now = datetime.now()
 
-    <div 1="modal" class="modal">
-        <div class="modal-content">
-            <span 2="cerrarModal" class="cerrar">&times;</span>
-            <p>Este es el contenido del modal.</p>
-        </div>
-    </div>
+    # Calculate the time remaining until New Year
+    time_remaining = new_year - now
 
-    <script src="script.js"></script>
-</body>
-</html>
+    # If New Year has arrived, exit the loop
+    if time_remaining.total_seconds() <= 0:
+        print("Happy New Year!")
+        break
+
+    # Print the countdown in days, hours, minutes, seconds
+    print(f"Time remaining until New Year: {time_remaining}")
+    
+    # Wait for 1 second before updating the countdown
+    time.sleep(1)
+
 
